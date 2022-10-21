@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<modification>
+		<id><![CDATA[[OCMOD] Zendesk Live Chat (formerly Zopim)]]></id>
+		<name><![CDATA[[OCMOD] Zendesk Live Chat (formerly Zopim)]]></name>
+		<code>knns_zendesk_live_chat_formerly_zopim</code>
+		<version>1.0.0</version>
+		<author><![CDATA[kanenas.net (aka Nikolas Branis) - nbran@kanenas.net]]></author>
+		<link>https://kanenas.net/</link>
+		<file path="catalog/view/theme/*/template/common/header.twig" error="log">
+			<operation error="skip">
+				<search><![CDATA[</head>]]></search>
+				<add position="before"><![CDATA[
+<!--Start of Zendesk Chat Script-->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){
+z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+$.src='https://v2.zopim.com/?XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';z.t=+new Date;$.
+type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+</script>
+<!--End of Zendesk Chat Script-->
+				]]></add>
+			</operation>
+		</file>
+	</modification>
